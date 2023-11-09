@@ -18,7 +18,7 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 1. [Sprzedający](#ac1) wystawia produkt na aukcję. ([UC1](#uc1)) <br>
 2. [Kupujący](#ac2) oferuje kwotę za produkt ([UC2](#uc2)) wyższą od aktualnie najwyższej oferty. ([BR1](#br1))<br>
 3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2))<br>
-4. [Kupujący](#ac2) przekazuje należność Sprzedającemu. ([UC4](#uc4))<br>
+4. [Kupujący](#ac2) przekazuje należność Sprzedającemu. ([UC4](#uc4), [BR4](#br4))<br>
 5. [Sprzedający](#ac1) przekazuje produkt Kupującemu.
 
 **Scenariusze alternatywne:** 
@@ -29,8 +29,11 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 3.A. Czas aukcji upłynął i [Kupujący](#ac2) przegrał aukcję. ([BR2](#br2)) <br>
 * 3.A.1. Koniec przypadku użycia.
 
-3.B. Aukcja została anulowana ([UC3](#uc3)) przez [Sprzedającego](#ac2). ([BR3](#br3)) <br>
+3.B. Aukcja została anulowana ([UC3](#uc3)) przez [Sprzedającego](#ac1). ([BR3](#br3)) <br>
 * 3.B.1. Koniec przypadku użycia.
+
+4.A. [Kupujący](#ac2) nie przekazał należności [Sprzedającemu](#ac1). ([BR4](#br4)) <br>
+* 4.A.1. Koniec przypadku użycia
 
 ---
 
@@ -155,13 +158,16 @@ Aukcja jest formą zawierania transakcji kupna-sprzedaży, w której Sprzedając
 
 Fizyczny lub cyfrowy obiekt, który ma zostać sprzedany w ramach aukcji.
 
+<a id="bo3"></a>
+### BO3: Spółka
+Firma zarządzająca opisywanym systemem.
+
 ## Reguły biznesowe
 
 <a id="br1"></a>
 ### BR1: Złożenie oferty
 
 Złożenie oferty wymaga zaproponowania kwoty wyższej niż aktualnie oferowana o minimum 1,00 PLN.
-
 
 <a id="br2"></a>
 ### BR2: Rozstrzygnięcie aukcji
@@ -171,6 +177,13 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 <a id="br3"></a>
 ### BR3: Anulowanie aukcji
 W przypadku anulowania aukcji przez [Sprzedającego](#ac1), nie wygrywa jej żaden [Kupujący](#ac2).
+
+<a id="br4"></a>
+### BR4: Składanie opłaty
+W przypadku wygrania aukcji przez [Kupującego](#ac2), jest on zobowiązany do zapłacenia kwoty określonej w swojej najwyższej ofercie. W przypadku braku zapłaty aukcja jest anulowana, a konto [Kupującego](#ac2) w systemie obciążane jest karą w wysokości nieuiszczonej kwoty.
+
+### BR5: Kary
+Konto [Kupującego](#ac2) obciążone karą nie może zgłaszać ofert kupna do czasu uiszczenia kwoty równej wysokości kary na rzecz Spółki([BO3](#bo3).
 
 ## Macierz CRUDL
 
