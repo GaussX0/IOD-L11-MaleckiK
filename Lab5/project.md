@@ -183,7 +183,7 @@ W przypadku anulowania aukcji przez [Sprzedającego](#ac1), nie wygrywa jej żad
 W przypadku wygrania aukcji przez [Kupującego](#ac2), jest on zobowiązany do zapłacenia kwoty określonej w swojej najwyższej ofercie. W przypadku braku zapłaty aukcja jest anulowana, a konto [Kupującego](#ac2) w systemie obciążane jest karą w wysokości nieuiszczonej kwoty.
 
 ### BR5: Kary
-Konto [Kupującego](#ac2) obciążone karą nie może zgłaszać ofert kupna do czasu uiszczenia kwoty równej wysokości kary na rzecz Spółki([BO3](#bo3).
+Konto [Kupującego](#ac2) obciążone karą nie może zgłaszać ofert kupna do czasu uiszczenia kwoty równej wysokości kary na rzecz Spółki([BO3](#bo3)).
 
 ## Macierz CRUDL
 
